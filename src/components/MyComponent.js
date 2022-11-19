@@ -26,7 +26,7 @@ class MyComponent extends React.Component {
   // JXS
   render() {
     return (
-      <div className="h1">
+      <div>
         <AddUserInfo hanldeAddNewUser={this.hanldeAddNewUser} />
         <br /> <br />
         <DisplayInfor listUsers={this.state.listUsers} />
