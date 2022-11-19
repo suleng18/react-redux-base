@@ -16,6 +16,8 @@ class DisplayInfor extends React.Component {
     // const listUsers = this.props.listUsers;
     // console.log('🚀 ~ DisplayInfor ~', listUsers);
     // props --> properties
+
+    // template + logic js
     return (
       <div className="display-info-container">
         <img className="" src={logo} alt="" />
@@ -28,10 +30,18 @@ class DisplayInfor extends React.Component {
         {this.state.isShowListUser && (
           <>
             {listUsers.map((user, idex) => {
+              console.log(user);
               return (
                 <div key={user.id} className={+user.age > 18 ? 'black' : 'red'}>
-                  <div>My name's {user.name}</div>
-                  <div>My age's {user.age}</div>
+                  <div>
+                    <div>My name's {user.name}</div>
+                    <div>My age's {user.age}</div>
+                  </div>
+
+                  <div>
+                    <button onClick={() => this.props.hanldeDeleteUser(user.id)}>Delete</button>
+                  </div>
+
                   <hr />
                 </div>
               );
