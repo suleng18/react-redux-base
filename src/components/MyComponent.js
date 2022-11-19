@@ -26,11 +26,15 @@ class MyComponent extends React.Component {
   // JXS
   render() {
     return (
-      <div>
-        <AddUserInfo hanldeAddNewUser={this.hanldeAddNewUser} />
-        <br /> <br />
-        <DisplayInfor listUsers={this.state.listUsers} />
-      </div>
+      <>
+        <div className="a">
+          <AddUserInfo hanldeAddNewUser={this.hanldeAddNewUser} />
+          <br /> <br />
+          <DisplayInfor listUsers={this.state.listUsers} />
+        </div>
+
+        <div className="b"></div>
+      </>
     );
   }
 }
