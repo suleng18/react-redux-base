@@ -3,7 +3,7 @@
 
 import React from 'react';
 import DisplayInfor from './DisplayInfor';
-import UserInfor from './UserInfo';
+import AddUserInfo from './AddUserInfo';
 
 class MyComponent extends React.Component {
   state = {
@@ -13,11 +13,21 @@ class MyComponent extends React.Component {
       { id: 3, name: 'Sulengdev', age: '30' },
     ],
   };
+
+  hanldeAddNewUser = (userObj) => {
+    // let listUsersNew = this.state.listUsers;
+    // listUsersNew.unshift(userObj);
+    // this.setState({ listUser: listUsersNew });
+
+    this.setState({
+      listUsers: [userObj, ...this.state.listUsers],
+    });
+  };
   // JXS
   render() {
     return (
       <div className="h1">
-        <UserInfor />
+        <AddUserInfo hanldeAddNewUser={this.hanldeAddNewUser} />
         <br /> <br />
         <DisplayInfor listUsers={this.state.listUsers} />
       </div>
